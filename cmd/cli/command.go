@@ -59,7 +59,7 @@ func query(sql string) {
 
 	err := db.DB.Raw(sql).Scan(&results).Error
 	if err != nil {
-		fmt.Println("❌ Error al ejecutar consulta:", err)
+		fmt.Println("Error al ejecutar consulta:", err)
 		return
 	}
 
