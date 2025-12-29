@@ -3,6 +3,7 @@ package config
 import (
 	"os"
 
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 )
 
@@ -19,5 +20,13 @@ func Load() *Config {
 	return &Config{
 		DBUrl:   os.Getenv("DB_URL"),
 		DBToken: os.Getenv("DB_TOKEN"),
+	}
+}
+
+func CorsConfig() cors.Config {
+	return cors.Config{
+		AllowOrigins:     "http://127.0.0.1:5501",
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		AllowCredentials: true,
 	}
 }

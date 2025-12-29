@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turso Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h2>Salas de Chat</h2>
+          <div class="create-room">
+            <input type="text" id="roomNameInput" placeholder="Nueva sala..." />
+            <button onclick="createRoom()">+</button>
+          </div>
+        </div>
+        <div class="rooms-list" id="roomsList"></div>
+      </div>
+
+      <div class="chat-area">
+        <div class="chat-header">
+          <h3 id="currentRoomName">Selecciona una sala</h3>
+        </div>
+        <div id="errorContainer"></div>
+        <div class="messages-container" id="messagesContainer">
+          <div class="empty-state">
+            Selecciona una sala para comenzar a chatear
+          </div>
+        </div>
+        <div class="message-input">
+          <form class="input-form" onsubmit="sendMessage(event)">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="messageInput"
+                placeholder="Escribe un mensaje..."
+                required
+              />
+            </div>
+            <button type="submit" class="send-button">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
